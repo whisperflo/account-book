@@ -1,7 +1,4 @@
-#include<iostream>
-#include<string>
-
-using namespace std;
+#include"common.h"
 
 //日期结构体
 struct Date{
@@ -23,3 +20,9 @@ struct AccountItem{
 	double amount;  //交易金额
 	string description; //交易描述
 };
+
+//针对账目数据进行操作的函数声明
+
+
+//加载账目数据
+void loadDataFromFile(vector<AccountItem> &items);
