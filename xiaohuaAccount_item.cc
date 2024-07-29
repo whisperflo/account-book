@@ -19,8 +19,8 @@ int main(){
 	
 	switch(key){
 		case '1' :// 1-记账
-			showaccountMenu();	
-			accountings(items);
+			showAccountMenu();	
+			accounting(items);
 			break;
 		case '2':// 2-查询
 			showQueryMenu();

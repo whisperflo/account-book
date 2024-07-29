@@ -26,3 +26,10 @@ struct AccountItem{
 
 //加载账目数据
 void loadDataFromFile(vector<AccountItem> &items);
+
+
+//记账
+void accounting(vector<AccountItem> &items);
+
+//查询
+void selectAccounts(const vector<AccountItem> items);
