@@ -1,5 +1,5 @@
-#include"headFile/account_item.h"
-//加载账目数据
+#include "headFile/account_item.h"
+/* //加载账目数据
 void loadDataFromFile(vector<AccountItem> &items){
     sqlite3 *db;
     sqlite3_stmt *stmt;
@@ -45,4 +45,4 @@ void loadDataFromFile(vector<AccountItem> &items){
     // 清理资源
     sqlite3_finalize(stmt);
     sqlite3_close(db);
-}
+} */
