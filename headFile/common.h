@@ -2,9 +2,11 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include "../headFile/account_item.h"
+// #include "../headFile/account_item.h"
 
 #define FILEPATH "/home/hjx/AccountBook/databases/AccountBook.txt"
+#define INCOME "收入"
+#define EXPENSE "支出"
 using namespace std;
 
 // 通用功能性函数声明
@@ -20,3 +22,5 @@ void showQueryMenu(); // 显示查询菜单
 char readMenuSelection(int options);
 
 char readQuitConfirm();
+
+int readAmount();
