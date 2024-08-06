@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <vector>
+
+#include <cmath> //用于处理保存小数点后一位的函数
 // #include "../headFile/account_item.h"
 
 #define FILEPATH "/home/hjx/AccountBook/databases/AccountBook.txt"
@@ -23,4 +25,7 @@ char readMenuSelection(int options);
 
 char readQuitConfirm();
 
-int readAmount();
+double readAmount();
+
+// 保留小数点后一位小数
+double roundToOneDecimalPlace(double value);

@@ -28,7 +28,7 @@ char readQuitConfirm()
     string str;
     while (true)
     {
-        // 读取用户的输入，并将这行信息都保存在str中
+        // 读取用户的一行输入数据，并将这行信息都保存在str中
         getline(cin, str);
 
         // 进行合法性校验
@@ -45,6 +45,30 @@ char readQuitConfirm()
 }
 
 // 读取用户输入的金额
-int readAmount()
+double readAmount()
 {
+    double amount;
+    string str;
+    while (true)
+    {
+        getline(cin, str);
+
+        // 进行合法性校验
+        try
+        {
+            amount = stod(str);
+            break;
+        }
+        catch (invalid_argument e)
+        {
+            cout << "输入错误，请正确输入数字：";
+        }
+    }
+    return roundToOneDecimalPlace(amount);
+}
+
+// 保留小数点后一位
+double roundToOneDecimalPlace(double value)
+{
+    return round(value * 10.0) / 10.0;
 }

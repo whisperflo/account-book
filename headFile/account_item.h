@@ -18,3 +18,12 @@ void accounting(vector<AccountItem> &items);
 
 // 查询
 void selectAccounts(const vector<AccountItem> items);
+
+// 支出
+void expense(vector<AccountItem> &items);
+
+// 收入
+void income(vector<AccountItem> &items);
+
+// 数据写入文件
+void insertToFile(const AccountItem item);

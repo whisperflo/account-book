@@ -20,11 +20,11 @@ int main()
 		{
 		case '1': // 1-记账
 			showAccountMenu();
-			// accounting(items);
+			accounting(items);
 			break;
 		case '2': // 2-查询
 			showQueryMenu();
-			// selectAccounts(items);
+			selectAccounts(items);
 			break;
 		case '3': // 3-退出
 			cout << "\n确认退出？ (Y/N):";
