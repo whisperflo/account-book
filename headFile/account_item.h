@@ -17,7 +17,9 @@ void loadDataFromFile(vector<AccountItem> &items);
 void accounting(vector<AccountItem> &items);
 
 // 查询
-void selectAccounts(const vector<AccountItem> items);
+void selectAccounts(const vector<AccountItem> &items);
+void selectItems(const vector<AccountItem> &items);
+void selectItems(const vector<AccountItem> &items, const string ItemType);
 
 // 支出
 void expense(vector<AccountItem> &items);
@@ -27,3 +29,6 @@ void income(vector<AccountItem> &items);
 
 // 数据写入文件
 void insertToFile(const AccountItem item);
+
+// 打印一条账单信息
+void printItem(const AccountItem &item);
