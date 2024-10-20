@@ -1,0 +1,15 @@
+1729440234 ERROR sub1 : sub1 error
+1729440234 WARN sub1 : sub1 warn
+1729440234 ERROR sub1 : Streamed sub1 error
+1729440234 WARN sub1 : Streamed sub1 warn
+1729440265 ERROR sub1 : sub1 error
+1729440265 WARN sub1 : sub1 warn
+1729440265 ERROR sub1 : Streamed sub1 error
+1729440265 WARN sub1 : Streamed sub1 warn
+1729440800 ERROR sub1 : sub1 error
+1729440800 WARN sub1 : sub1 warn
+1729440800 ERROR sub1 : Streamed sub1 error
+1729440800 WARN sub1 : Streamed sub1 warn
+2024-10-21 00:32:37,812 [INFO] : This is an info message from root category.
+2024-10-21 00:32:37,813 [WARN] : This is a warning message from root category.
+2024-10-21 00:32:37,813 [ERROR] : This is an error message from root category.
