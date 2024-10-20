@@ -1,0 +1,9 @@
+2024-10-21 01:04:05,783 [INFO] : Program started.
+2024-10-21 01:04:05,790 [INFO] : Loaded account data from file.
+2024-10-21 01:04:05,805 [DEBUG] : Displayed main menu.
+2024-10-21 01:04:08,709 [DEBUG] : User selected option: 1
+2024-10-21 01:04:18,990 [INFO] : Performed accounting operation.
+2024-10-21 01:04:19,005 [DEBUG] : Displayed main menu.
+2024-10-21 01:04:20,106 [DEBUG] : User selected option: 3
+2024-10-21 01:04:21,946 [INFO] : User confirmed exit.
+2024-10-21 01:04:21,947 [INFO] : Program terminated.
