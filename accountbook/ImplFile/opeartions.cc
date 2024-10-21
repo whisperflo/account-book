@@ -1,19 +1,43 @@
 #include "../headFile/account_item.h"
 #include "../headFile/common.h"
+#include "../headFile/logger.h"
 
 // 读取文件中的账目数据
 void loadDataFromFile(vector<AccountItem> &items)
 {
+    Logger logger("../log");
     ifstream os(FILEPATH);
 
-    // 逐行读取每一条账目，并将其包装成AccountItem
-    AccountItem item;
-    string word;
-    while (os >> item.type >> item.amount >> item.description >> item.date.year >> item.date.month >> item.date.day >> item.date.hour >> item.date.minute >> item.date.second)
+    // 检查文件是否成功打开
+    if (!os.is_open())
     {
+        logger.debug("Fail to open the file:" + std::string(FILEPATH));
+        return;
+    }
+    // 逐行读取每一条账目，并将其包装成AccountItem
+
+    string line;
+    while (getline(os, line))
+    {
+        // 使用字符串输入输出流来解析每行
+        stringstream ss(line);
+        AccountItem item;
+        char hyphen, colon;
+
+        // 读取账目类型和金额
+        ss >> item.type >> item.amount >> std::ws;
+
+        // 读取账目备注，直到遇到制表符
+        getline(ss, item.description, '\t');
+        ss >> item.date.year >> hyphen >> item.date.month >> hyphen >> item.date.day >> item.date.hour >> colon >> item.date.minute >> colon >> item.date.second;
         items.push_back(item);
     }
     os.close();
+    logger.debug("loadDataFromFile items.size:" + std::to_string(items.size()));
+    if (items.empty())
+    {
+        logger.warn("Fail to loadItemsData!!!");
+    }
 }
 
 // 记账
