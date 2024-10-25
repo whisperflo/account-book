@@ -5,7 +5,7 @@
 int main()
 {
 	// 创建 Logger 实例
-	Logger logger("./log");
+	Logger &logger = Logger::getInstance("./log");
 
 	// 1.加载文件中的账目数据
 	vector<AccountItem> items;

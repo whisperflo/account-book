@@ -5,7 +5,8 @@
 // 读取文件中的账目数据
 void loadDataFromFile(vector<AccountItem> &items)
 {
-    Logger logger("../log");
+    Logger &logger = Logger::getInstance("./log"); // 获取单例 Logger 实例
+
     ifstream os(FILEPATH);
 
     // 检查文件是否成功打开
@@ -14,24 +15,20 @@ void loadDataFromFile(vector<AccountItem> &items)
         logger.debug("Fail to open the file:" + std::string(FILEPATH));
         return;
     }
-    // 逐行读取每一条账目，并将其包装成AccountItem
 
     string line;
     while (getline(os, line))
     {
-        // 使用字符串输入输出流来解析每行
         stringstream ss(line);
         AccountItem item;
         char hyphen, colon;
 
-        // 读取账目类型和金额
         ss >> item.type >> item.amount >> std::ws;
-
-        // 读取账目备注，直到遇到制表符
         getline(ss, item.description, '\t');
         ss >> item.date.year >> hyphen >> item.date.month >> hyphen >> item.date.day >> item.date.hour >> colon >> item.date.minute >> colon >> item.date.second;
         items.push_back(item);
     }
+
     os.close();
     logger.debug("loadDataFromFile items.size:" + std::to_string(items.size()));
     if (items.empty())
@@ -160,7 +157,7 @@ void selectAccounts(const vector<AccountItem> &items)
 void selectItems(const vector<AccountItem> &items)
 {
     cout << "-------------------查询结果-------------------" << endl;
-    cout << "\n类型\t\t金额\t\t备注\n"
+    cout << "\n类型\t\t金额\t\t备注\t\t时间\n"
          << endl;
 
     // 遍历所有账目，统计总收支
