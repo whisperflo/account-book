@@ -11,7 +11,7 @@ class Logger
 {
 public:
     // 提供一个静态方法，用于获取唯一的 Logger 实例
-    static Logger &getInstance(const std::string &logDir = "./log")
+    static Logger &getInstance(const std::string &logDir)
     {
         static Logger instance(logDir); // 静态实例，生命周期为程序的整个运行期
         return instance;
